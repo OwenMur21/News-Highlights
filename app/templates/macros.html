@@ -5,3 +5,10 @@
     {% endfor %}
 
 {%endmacro%}
+
+{% macro displayCatNews(catnews_list)%}
+   {% for catnews in catnews_list %}
+        <li>{{catnews.name}}</li>
+    {% endfor %}
+
+{%endmacro%}

@@ -19,11 +19,11 @@ def get_topnews(source):
     with urllib.request.urlopen(get_topnews_url) as url:
         get_topnews_data = url.read()
         get_topnews_response = json.loads(get_topnews_data)
-
+        print(get_topnews_response)
         topnews_results = None
 
-        if get_topnews_response['results']:
-            topnews_results_list = get_topnews_response['results']
+        if get_topnews_response['articles']:
+            topnews_results_list = get_topnews_response['articles']
             topnews_results = process_results(topnews_results_list)
 
     return topnews_results
@@ -47,8 +47,8 @@ def process_results(topnews_list):
         urlToImage = topnews_item.get('urlToImage')
         url = topnews_item.get('url')
 
-        if poster:
-            topnews_object = Topnews(name,title,author,description,urlToImage,url)
+        if urlToImage:
+            topnews_object = Topnews(name,author,title,description,urlToImage,url)
             topnews_results.append(topnews_object)
 
     return topnews_results

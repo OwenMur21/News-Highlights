@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_topnews,get_catnews
+from .request import get_topnews,get_catnews,get_updates
 
 #Views
 @app.route('/')
@@ -18,3 +18,10 @@ def index():
     sprt_articles = get_catnews('sports')
     title = 'Home -Get breaking news headlines, and search for articles from over 30,000 news sources and blogs'
     return render_template('index.html', title = title, google_news = top_articles,biz = biz_articles,tech = tech_articles, ent = ent_articles, sprt = sprt_articles)
+
+@app.route('/update/<id>')
+def article(id):
+    detz_articles = get_updates(id)
+    print(detz_articles)
+    return render_template('news-update.html',detz = detz_articles)
+

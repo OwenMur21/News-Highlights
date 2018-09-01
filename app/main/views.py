@@ -1,9 +1,9 @@
-from flask import render_template
-from app import app
-from .request import get_topnews,get_catnews,get_updates
+from flask import render_template,request,redirect,url_for
+from . import main
+from ..request import get_topnews,get_catnews,get_updates
 
 #Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -19,7 +19,7 @@ def index():
     title = 'Home -Get breaking news headlines, and search for articles from over 30,000 news sources and blogs'
     return render_template('index.html', title = title, google_news = top_articles,biz = biz_articles,tech = tech_articles, ent = ent_articles, sprt = sprt_articles)
 
-@app.route('/update/<id>')
+@main.route('/update/<id>')
 def article(id):
     detz_articles = get_updates(id)
     print(detz_articles)

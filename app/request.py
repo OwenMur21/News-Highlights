@@ -136,8 +136,9 @@ def process3_results(updates_list):
         description = update_item.get('description')
         url = update_item.get('url')
         urlToImage = update_item.get('urlToImage')
+        publishedAt = update_item.get('publishedAt')
        
-        updates_object = Update(id,author,title,description,url,urlToImage)
+        updates_object = Update(id,author,title,description,url,urlToImage,publishedAt)
         updates_results.append(updates_object)
 
     return updates_results

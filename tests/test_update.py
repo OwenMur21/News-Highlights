@@ -1,6 +1,6 @@
 import unittest
 from app.models import Update
-Update = update.Update
+
 
 class UpdateTest(unittest.TestCase):
     '''

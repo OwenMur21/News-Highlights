@@ -1,7 +1,7 @@
 # News Highlights
 
 This app allows you to get top headlines news and news based on four categories as well: Business news, Technology news, Sports news and Entertainment news.
-The live site :
+The live site : https://newzhighlights.herokuapp.com/
 
 ### Prerequisites
 - Python 3.7 required

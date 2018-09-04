@@ -10,8 +10,8 @@ The live site : https://newzhighlights.herokuapp.com/
  - Clone the repository
  - Edit the start.sh file with your api key from: http://newsapi.org/
  - Install python 3.7
- - Run chmod a+x start.py
- - Run ./start.py
+ - Run chmod a+x start.sh
+ - Run ./start.sh
 
 ## Known Bugs
 
